@@ -1,0 +1,16 @@
+#footer{
+  z-index: 100;
+  position:fixed;
+  display: flex;
+  bottom: 0;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 55px;
+  background-color: #7474741f;
+}
+
+#footer p{
+  font-size: 13px;
+  font-weight: 400;
+}
