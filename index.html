@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/general.css">
-
+  <script defer src="./app.js"></script>
 </head>
 
 <body>
@@ -26,10 +26,9 @@
       <input type="text" id="search-input">
     </div>
 
-
-    <div id="info-tab" class="tab">
+    <div id="info-tab" class="tab" style="display: none;">
       <div id="info-profile">
-        <img src="https://github.githubassets.com/images/modules/logos_page/GitHub-Mark.png"/>
+        <img id="profile-img"/>
         <button id="view-profile-button">View Profile</button>
       </div>
       <div id="info-description">
@@ -42,24 +41,24 @@
         <div id="info-table">
           <table>
             <tr>
-              <td>Company:</td>
+              <td id="company">Company:</td>
             </tr>
             <tr>
-              <td>Website/Blog:</td>
+              <td id="website">Website/Blog:</td>
             </tr>
             <tr>
-              <td>Location:</td>
+              <td id="location">Location:</td>
             </tr>
             <tr>
-              <td>Member Since:</td>
+              <td id="memberSince">Member Since:</td>
             </tr>
           </table>
         </div>
       </div>
     </div>
 
-    <p id="repo-head">Lastest Repos</p>
-    <div id="repo-tab" class="tab">
+    <p id="repo-head" style="display: none;">Lastest Repos</p>
+    <div id="repo-tab" class="tab" style="display: none;">
       <div id="repo-section">
         <div id="repo-name">
           <p id="repo-name-test">test</p>
@@ -72,41 +71,8 @@
       </div>
     </div>
 
-    <div id="repo-tab" class="tab">
-      <div id="repo-section">
-        <div id="repo-name">
-          <p id="repo-name-test">test</p>
-        </div>
-        <div id="repo-cards">
-          <p id="stars">Stars:</p>
-          <p id="watchers">Watchers:</p>
-          <p id="forks">Forks:</p>
-        </div>
-      </div>
-    </div>
-    <div id="repo-tab" class="tab">
-      <div id="repo-section">
-        <div id="repo-name">
-          <p id="repo-name-test">test</p>
-        </div>
-        <div id="repo-cards">
-          <p id="stars">Stars:</p>
-          <p id="watchers">Watchers:</p>
-          <p id="forks">Forks:</p>
-        </div>
-      </div>
-    </div>
-    <div id="repo-tab" class="tab">
-      <div id="repo-section">
-        <div id="repo-name">
-          <p id="repo-name-test">test</p>
-        </div>
-        <div id="repo-cards">
-          <p id="stars">Stars:</p>
-          <p id="watchers">Watchers:</p>
-          <p id="forks">Forks:</p>
-        </div>
-      </div>
+    <div id="info-message">
+      <p>Enter a GitHub username to begin.</p>
     </div>
 
 
