@@ -5,3 +5,9 @@
 body {
   min-width: 500px;
 }
+
+:root {
+  --primary : rgb(90, 135, 100);
+  --tab-border : #19191921;
+  --text-grey : #898989;
+}
