@@ -1,7 +1,7 @@
 .tab {
   display: flex;
   flex-direction: row;
-  border: 1px solid #19191921;
+  border: 1px solid var(--tab-border);
   border-radius: 3px;
   margin: 1rem;
 }
@@ -21,14 +21,13 @@
 #search-body {
   white-space: nowrap;
   padding: 0 20px;
-  color: #898989;
+  color: var(--text-grey);
 }
 
 #search-tab input {
   margin: 10px 20px;
   padding: 10px 10px;
   font-size: 17px;
-  color: #4a4a4a;
   outline: none;
 }
 
@@ -40,11 +39,15 @@
   margin: 20px;
 }
 
+#profile-img {
+  margin-bottom: 15px;
+}
+
 #info-profile button {
   border: none;
   border-radius: 10px;
   height: 30px;
-  background-color: rgb(90, 135, 100);
+  background-color: var(--primary);
   color: white;
   cursor: pointer;
 }
@@ -108,12 +111,12 @@
 
 #info-table table{
   width: 100%;
-  border: 1px solid #19191921;
+  border: 1px solid var(--tab-border);
   border-collapse: collapse;
 }
 
-#info-table  th, td {
-  border-bottom: 1px solid #19191921;
+#info-table td {
+  border-bottom: 1px solid var(--tab-border);
   padding: 10px;
   font-size: 15px;
 }
@@ -141,7 +144,21 @@
 #repo-name p{
   font-size: 17px;
   font-weight: 400;
-  color:rgb(90, 135, 100);
+  color:var(--primary);
   margin: 1rem;
   cursor: pointer;
+}
+
+#info-message {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+}
+
+#info-message p {
+  font-size: 30px;
+  margin: 1rem;
+  color: var(--text-grey);
 }
