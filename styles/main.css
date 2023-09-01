@@ -154,11 +154,11 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  flex: 1;
 }
 
 #info-message p {
   font-size: 30px;
+  justify-content: center;
   margin: 1rem;
   color: var(--text-grey);
 }

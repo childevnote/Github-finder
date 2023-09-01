@@ -15,7 +15,7 @@ searchInput.addEventListener('keyup', function (event) {
     .then(response => {
       if (!response.ok) {
         // 사용자를 찾지 못한 경우
-        infoMessage.innerHTML = '<p>User not found. Enter a valid GitHub username to begin.</p>';
+        infoMessage.innerHTML = '<div id="info-message"><p>User not found. Enter a valid GitHub username to begin.</p></div>';
         infoTab.style.display = 'none';
         repoHead.style.display = 'none';
         repoTab.style.display = 'none';
@@ -70,7 +70,7 @@ searchInput.addEventListener('keyup', function (event) {
     })
     .catch(error => {
       console.error(error);
-      infoMessage.innerHTML = '<p>An error occurred. Please try again later.</p>';
+      infoMessage.innerHTML = '<div id="info-message"><p>An error occurred. Please try again later.</p></div>';
       infoMessage.style.display = 'block';
     });
 }
