@@ -79,6 +79,7 @@ searchInput.addEventListener("keyup", function (event) {
               return response.json();
             })
             .then((repos) => {
+              repoTab.innerHTML ='';
               repos.forEach((repo) => {
                 repoTab.innerHTML += `
                 <div id="repo-tab" class="tab">
