@@ -1,6 +1,6 @@
-#footer{
+#footer {
   z-index: 100;
-  position:fixed;
+  position: fixed;
   display: flex;
   bottom: 0;
   align-items: center;
@@ -10,7 +10,7 @@
   background-color: #7474741f;
 }
 
-#footer p{
+#footer p {
   font-size: 13px;
   font-weight: 400;
 }
