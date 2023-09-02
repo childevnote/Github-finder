@@ -143,10 +143,11 @@
   margin: 1rem 1rem 0;
 }
 
-#repo-name p {
+#repo-name a {
+  text-decoration: none;
+  color: var(--primary);
   font-size: 17px;
   font-weight: 400;
-  color: var(--primary);
   margin: 1rem;
   cursor: pointer;
 }

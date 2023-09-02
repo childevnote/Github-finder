@@ -17,6 +17,8 @@ searchInput.addEventListener("keyup", function (event) {
           infoMessage.innerHTML =
             '<div id="info-message"><p>User not found. Enter a valid GitHub username to begin.</p></div>';
           infoTab.style.display = "none";
+          repoHead.style.display = "none";
+          repoTab.style.display = "none";
           infoMessage.style.display = "block";
           return null;
         }
@@ -24,8 +26,6 @@ searchInput.addEventListener("keyup", function (event) {
       })
       .then((data) => {
         if (data) {
-          // 사용자를 찾은 경우
-          // 사용자 정보를 DOM에 추가
           infoTab.innerHTML = `
         <div id="info-tab" class="tab">
         <div id="info-profile">
@@ -84,7 +84,7 @@ searchInput.addEventListener("keyup", function (event) {
                 <div id="repo-tab" class="tab">
                   <div id="repo-section">
                     <div id="repo-name">
-                      <p>${repo.name}</p>
+                      <p ><a href="https://github.com/${username}/${repo.name}">${repo.name}</a></p>
                     </div>
                     <div id="repo-cards">
                       <p id="stars">Stars: ${repo.stargazers_count}</p>
