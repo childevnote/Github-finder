@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles/footer.css">
   <link rel="stylesheet" href="styles/general.css">
+  <link rel="stylesheet" href="styles/spinner.css">
   <script defer src="./app.js"></script>
   <script defer src="https://use.fontawesome.com/releases/v5.2.0/js/all.js"></script>
 </head>
@@ -28,34 +29,6 @@
     </div>
 
     <div id="info-tab" class="tab" style="display: none;">
-      <div id="info-profile">
-        <img id="profile-img" />
-        <button id="view-profile-button">View Profile</button>
-      </div>
-      <div id="info-description">
-        <div id="info-cards">
-          <p id="public-repos">Public Repos:</p>
-          <p id="public-gists">Public Gists:</p>
-          <p id="followers">Followers:</p>
-          <p id="following">Following:</p>
-        </div>
-        <div id="info-table">
-          <table>
-            <tr>
-              <td id="company">Company:</td>
-            </tr>
-            <tr>
-              <td id="website">Website/Blog:</td>
-            </tr>
-            <tr>
-              <td id="location">Location:</td>
-            </tr>
-            <tr>
-              <td id="memberSince">Member Since:</td>
-            </tr>
-          </table>
-        </div>
-      </div>
     </div>
 
     <p id="repo-head" style="display: none;">Lastest Repos</p>
@@ -70,8 +43,8 @@
       <p>Github Finder ©️</p>
     </footer>
 
-    <div id="spinner" style="display: none;">
-      <i class="fa-duotone fa-spinner fa-spin fa-lg" style="--fa-primary-opacity: 1; --fa-secondary-opacity: 0.5;"></i>
+    <div class="spinner-container" id="spinner" style="display: none;">
+      <i class="fas fa-spinner fa-6x  fa-spin"></i>
     </div>
 
   </div>
