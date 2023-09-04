@@ -12,7 +12,11 @@ searchInput.addEventListener("keyup", function (event) {
     spinner.style.display = "block";
 
     // GitHub API를 사용하여 사용자 정보 가져오기 (비동기 통신)
-    fetch(`https://api.github.com/users/${username}`)
+    fetch(`https://api.github.com/users/${username}`, {
+      headers: {
+        Authorization: "token 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",
+      },
+    })
       .then((response) => {
         if (!response.ok) {
           // 사용자를 찾지 못한 경우
@@ -24,9 +28,8 @@ searchInput.addEventListener("keyup", function (event) {
           repoTab.style.display = "none";
           infoMessage.style.display = "block";
           return null;
-        }
-        else {
-          infoMessage.innerHTML ='<div id="info-message"><p>Loading</p></div>';
+        } else {
+          infoMessage.innerHTML = '<div id="info-message"><p>Loading</p></div>';
         }
         return response.json();
       })
@@ -68,9 +71,13 @@ searchInput.addEventListener("keyup", function (event) {
         </div>
         </div>
         `;
-        infoMessage.style.display = "none";
+          infoMessage.style.display = "none";
 
-          fetch(`https://api.github.com/users/${username}/repos`)
+          fetch(`https://api.github.com/users/${username}/repos`, {
+            headers: {
+              Authorization: "token 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",
+            },
+          })
             .then((response) => {
               if (!response.ok) {
                 spinner.style.display = "none";
@@ -83,7 +90,7 @@ searchInput.addEventListener("keyup", function (event) {
               return response.json();
             })
             .then((repos) => {
-              repoTab.innerHTML ='';
+              repoTab.innerHTML = "";
               repos.forEach((repo) => {
                 repoTab.innerHTML += `
                 <div id="repo-tab" class="tab">
