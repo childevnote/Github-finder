@@ -9,11 +9,14 @@ searchInput.addEventListener("keyup", function (event) {
   if (event.key === "Enter") {
     const username = searchInput.value.trim();
 
+    spinner.style.display = "block";
+
     // GitHub API를 사용하여 사용자 정보 가져오기 (비동기 통신)
     fetch(`https://api.github.com/users/${username}`)
       .then((response) => {
         if (!response.ok) {
           // 사용자를 찾지 못한 경우
+          spinner.style.display = "none";
           infoMessage.innerHTML =
             '<div id="info-message"><p>User not found. Enter a valid GitHub username to begin.</p></div>';
           infoTab.style.display = "none";
@@ -21,6 +24,9 @@ searchInput.addEventListener("keyup", function (event) {
           repoTab.style.display = "none";
           infoMessage.style.display = "block";
           return null;
+        }
+        else {
+          infoMessage.innerHTML ='<div id="info-message"><p>Loading</p></div>';
         }
         return response.json();
       })
@@ -62,14 +68,12 @@ searchInput.addEventListener("keyup", function (event) {
         </div>
         </div>
         `;
-
-          // info-tab을 보이도록 변경
-          infoTab.style.display = "block";
-          infoMessage.style.display = "none";
+        infoMessage.style.display = "none";
 
           fetch(`https://api.github.com/users/${username}/repos`)
             .then((response) => {
               if (!response.ok) {
+                spinner.style.display = "none";
                 infoMessage.innerHTML =
                   '<div id="info-message"><p>User not found. Enter a valid GitHub username to begin.</p></div>';
                 repoHead.style.display = "none";
@@ -95,9 +99,10 @@ searchInput.addEventListener("keyup", function (event) {
                   </div>
                 </div>
         `;
+                infoTab.style.display = "block";
                 repoHead.style.display = "block";
                 repoTab.style.display = "block";
-                infoMessage.style.display = "none";
+                spinner.style.display = "none";
               });
             })
             .catch((error) => {
@@ -105,6 +110,7 @@ searchInput.addEventListener("keyup", function (event) {
               infoMessage.innerHTML =
                 '<div id="info-message"><p>Failed to fetch user\'s repositories.</p></div>';
               infoMessage.style.display = "block";
+              spinner.style.display = "none";
             });
         }
       })
@@ -113,6 +119,7 @@ searchInput.addEventListener("keyup", function (event) {
         infoMessage.innerHTML =
           '<div id="info-message"><p>An error occurred. Please try again later.</p></div>';
         infoMessage.style.display = "block";
+        spinner.style.display = "none";
       });
   }
 });
