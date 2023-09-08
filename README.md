@@ -1,5 +1,5 @@
 <img src="https://capsule-render.vercel.app/api?type=waving&color=auto&height=200&section=header&text=childevnote&fontSize=90" />
-<h2>개인 프로젝트 : Github Finder 만들기</h2>
+<h2>개인 프로젝트 : Github Finder</h2>
 <summary><h2>사용 스택</h2></summary> 
 <div>
   <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=flat&logo=JavaScript&logoColor=white" />
