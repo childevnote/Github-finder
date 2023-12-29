@@ -31,8 +31,5 @@
 </div>
 </details>
 
-<summary><h2>기대 결과</h2></summary>
-<img src="assets\images\2.png">
-
 <summary><h2>최종 결과</h2></summary>
 <img src="assets\images\1.gif">
